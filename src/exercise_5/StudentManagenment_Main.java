@@ -37,10 +37,8 @@ public class StudentManagenment_Main {
                     }
                     break;
                 case 2:
-                   int em;
                     System.out.println("2. Thêm mới học sinh");
-                   // studentManagenments[count]= new StudentManagenment(); // khởi tạo đối tượng
-                    StudentManagenment newStudent= new StudentManagenment("em+1", "Nguyen D", 20, true, "Da Nang" , 53453453);
+                    StudentManagenment newStudent= new StudentManagenment();
                     newStudent.inputData(scanner);
                     for (int i = 0; i < 5; i++) {
                         if (studentManagenments[i] == null) {
@@ -48,14 +46,25 @@ public class StudentManagenment_Main {
                             break;
                         }
                     }
-                    count++;
                     break;
                 case 3:
                     System.out.println("3.Nhập mã sinh viên cần sửa: ");
+                    StudentManagenment editStudent= new StudentManagenment();
                     String id= scanner.nextLine();
-                    for (int i = 0; i < count; i++) { // duyệt mảng
-                        if (studentManagenments[i].getStudentId().equals(id)){ // nếu mã sinh viên nhập vào bằng mã sinh viên trong mảng
-                            studentManagenments[i].inputData(scanner); // nhập lại thông tin sinh viên theo mã sinh viên
+                    editStudent.setStudentId(id);
+                    System.out.println("Tên SV: ");
+                    editStudent.setStudentName(scanner.nextLine());
+                    System.out.println("Tuổi SV: ");
+                    editStudent.setAge(Integer.parseInt(scanner.nextLine()));
+                    System.out.println("Giới tính: ");
+                    editStudent.setSex(Boolean.parseBoolean(scanner.nextLine()));
+                    System.out.println("Địa chỉ: ");
+                    editStudent.setAddress(scanner.nextLine());
+                    System.out.println("Số điện thoại: ");
+                    editStudent.setPhone(Integer.parseInt(scanner.nextLine()));
+                    for (int i = 0; i < 100; i++) { // duyệt mảng
+                        if (studentManagenments[i] !=null && studentManagenments[i].getStudentId()==id){ // nếu mã sinh viên nhập vào bằng mã sinh viên trong mảng
+                            studentManagenments[i]= editStudent;
                         }
                     }
                     break;

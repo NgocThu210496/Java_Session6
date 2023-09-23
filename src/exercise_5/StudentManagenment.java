@@ -87,9 +87,6 @@ public class StudentManagenment {
         this.phone=Integer.parseInt(scanner.nextLine());
     }
 
-//public void addStudent(StudentManagenment student) {
-//    students.add(student); // Thêm đối tượng học sinh vào danh sách
-//}
     public void displayData(){
         System.out.println("*******THÔNG TIN SINH VIÊN*********");
         System.out.printf("Mã SV: %s\nTên SV: %s\nTuổi SV: %d\n" ,this.studentId, this.studentName, this.age);
