@@ -42,9 +42,12 @@ public class StudentManagenment_Main {
                    // studentManagenments[count]= new StudentManagenment(); // khởi tạo đối tượng
                     StudentManagenment newStudent= new StudentManagenment("em+1", "Nguyen D", 20, true, "Da Nang" , 53453453);
                     newStudent.inputData(scanner);
-                    //studentManagenments[em]=newStudent;
-                    //StudentManagement.addStudent(newStudent);
-                    //studentManagenments[count].inputData(scanner); // nhập thông tin sinh viên
+                    for (int i = 0; i < 5; i++) {
+                        if (studentManagenments[i] == null) {
+                            studentManagenments[i] = newStudent;
+                            break;
+                        }
+                    }
                     count++;
                     break;
                 case 3:
